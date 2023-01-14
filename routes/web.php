@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return view('task.list');})->name('task.list');
+Route::get('/task/create', function () {return view('task.create');})->name('task.create');
+Route::get('/task/stats', function () {return view('task.stats');})->name('task.stats');
