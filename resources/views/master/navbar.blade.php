@@ -7,10 +7,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" href="{{route('task.list')}}">Tasks</a>
+          <a class="nav-link [{path == '/' ? 'active' : ''}]"  href="{{route('task.list')}}">Tasks</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route('task.stats')}}">Stats</a>
+          <a class="nav-link [{path == '/task/stats' ? 'active' : ''}]" href="{{route('task.stats')}}">Stats</a>
         </li>
       </ul>
       <div class="d-flex" role="search">

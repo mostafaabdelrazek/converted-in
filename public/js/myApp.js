@@ -9,9 +9,10 @@ var HTTP_STATUS = {
 }
 
 
-app.controller('MasterController', function($scope) {
+app.controller('MasterController', function($scope, $location, $window) {
     $scope.arrConfig = {
         pageNo: 1,
         pageSize: 10
     }
+    $scope.path = $window.location.pathname;
 });

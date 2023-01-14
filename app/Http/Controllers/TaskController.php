@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task;
-use App\Models\TaskStats;
+use App\Models\TaskStat;
 use App\Http\Requests\TaskCreateRequest;
 
 class TaskController extends Controller
@@ -31,6 +31,8 @@ class TaskController extends Controller
     }
 
     public function LoadStats(Request $request) {
-
+        \DB::enableQueryLog();
+        $taskStats = TaskStat::with(['user'])->orderBy('tasks_number', 'DESC')->limit(10)->get(['id', 'tasks_number']);
+        return response()->json($taskStats, 200);
     }
 }

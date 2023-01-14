@@ -8,9 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class TaskStat extends Model
 {
     use HasFactory;
-    
-    protected $fillable = [
-        'user_id',
-        'tasks_number'
-    ];
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User', 'id');
+    }
 }
