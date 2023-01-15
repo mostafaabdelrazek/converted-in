@@ -15,9 +15,11 @@ class TaskTrigger extends Migration
     {
         DB::unprepared('
         CREATE TRIGGER tr_task_user_stats AFTER INSERT ON `tasks` FOR EACH ROW
+            BEGIN
             INSERT INTO task_stats (`id`, `tasks_number`, `created_at`, `updated_at`)  
             VALUES (NEW.assigned_to_id, 1, NEW.created_at, NULL)
             ON DUPLICATE KEY UPDATE tasks_number = tasks_number+1, updated_at = now()
+            END;
         ');
     }
 
