@@ -7,7 +7,7 @@
 <script src="{{asset('js/task/create.js')}}"></script>
 @endsection
 @section('content')
-    <div data-ng-controller="TaskCreate" class="row">
+    <div data-ng-controller="TaskCreate" class="row mt-5">
         <div class="col-sm-3">
             <h4>Create Task</h4>
         </div>
